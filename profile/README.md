@@ -1,39 +1,49 @@
-# patentreply.ai
+# PatentReply
 
-**AI-powered patent prosecution tools for patent attorneys and agents.**
+**The USPTO prosecution record for your AI.**
 
-We build software that helps patent professionals respond to USPTO Office Actions faster and with greater precision. Our tools combine deep patent domain knowledge with modern AI to streamline the most time-consuming parts of patent prosecution.
+PatentReply compiles a U.S. patent application's public file wrapper into a
+working record your AI assistant can use: every claim version on the legal
+date it took effect, each office action with its rejections and objections,
+the cited references, and the specification. Ask it to review the pending
+office action and it sets each rejection against the exact passage the
+examiner relied on, with a verification address into the stored record for
+every quote. Current law comes from the MPEP live, never recited from memory.
 
-## What We Do
+The response is built in stages the attorney controls. Drafting stays locked
+until a registered practitioner approves the response plan on the PatentReply
+approval page; a confirmation inside the chat is never sign-off. After
+approval, PatentReply generates the 37 CFR 1.121 claim listing and the
+filing-ready response document on the server.
 
-patentreply.ai analyzes Office Actions, maps examiner rejections to claims, identifies prior art distinctions, and helps attorneys draft precise, persuasive responses — all while preserving each attorney's individual writing style and prosecution strategy.
+## Connect
 
-Whether you're a solo practitioner or part of a large IP team, our platform is designed to save hours per Office Action without sacrificing quality.
+One hosted MCP server, OAuth sign-in, no API keys:
 
-🔗 **[patentreply.ai](https://patentreply.ai)** — Learn more and request access
+```
+https://mcp.patentreply.ai/mcp/v2
+```
 
-## Open Source
+- **Claude** (web, desktop, mobile): Settings → Connectors → Add custom connector
+- **Claude Code**: `claude mcp add --transport http patentreply https://mcp.patentreply.ai/mcp/v2`
+- **Cursor, ChatGPT, any MCP client**: see [patentreply/patentreply-mcp](https://github.com/patentreply/patentreply-mcp)
 
-We believe in giving back to the patent and legal-tech community. Select tools and utilities from our platform are released here as open-source projects:
+Full guide: [patentreply.ai/connect](https://www.patentreply.ai/connect)
 
-| Repository | Description |
-|---|---|
-| *Coming soon* | Patent document template creator and other utilities |
+## Repositories
 
-We use and appreciate open-source software in our stack, and we're committed to proper attribution and contribution where we can.
+- [patentreply-mcp](https://github.com/patentreply/patentreply-mcp): the connector card, registry metadata, and the Claude plugin with the office-action methodology and `/oa`, `/respond`, `/interview`, `/status` commands.
 
-## Built For Patent Professionals
+The PatentReply service is hosted by Patent Agentic LLC and is not open
+source. Public USPTO records and current MPEP text are ingested server-side
+for the applications you name; PatentReply receives only the arguments of
+the tools your AI calls and never reads conversation history, memory, or
+files on your machine.
 
-- **Office Action Analysis** — Automated parsing and mapping of examiner rejections, claim limitations, and cited prior art
-- **Response Drafting** — AI-assisted argument generation grounded in the actual claim language and prosecution history
-- **Attorney Voice Matching** — Responses that reflect your writing style, not generic AI output
-- **USPTO Integration** — Direct connection to Patent Center and patent data APIs
+## Links
 
-## Connect With Us
+[Website](https://www.patentreply.ai) · [Documentation](https://www.patentreply.ai/documentation) · [Pricing](https://www.patentreply.ai/pricing) · [Privacy](https://www.patentreply.ai/privacy) · [Security](https://www.patentreply.ai/security) · [Terms](https://www.patentreply.ai/terms)
 
-- 🌐 [patentreply.ai](https://patentreply.ai)
-- 📧 [info@patentreply.ai](mailto:info@patentreply.ai)
+Support: info@patentreply.ai
 
----
-
-<sub>PatentReply.ai is built for patent attorneys and agents. It is not a law firm and does not provide legal advice.</sub>
+*PatentReply is software, not a law firm. The registered practitioner remains responsible for every filing.*
