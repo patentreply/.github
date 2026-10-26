@@ -1,49 +1,79 @@
-# PatentReply
+# PatentReply — Patent Prosecution in Claude and ChatGPT
 
-**The USPTO prosecution record for your AI.**
+**Connect your AI to the USPTO file wrapper.**
 
-PatentReply compiles a U.S. patent application's public file wrapper into a
-working record your AI assistant can use: every claim version on the legal
-date it took effect, each office action with its rejections and objections,
-the cited references, and the specification. Ask it to review the pending
-office action and it sets each rejection against the exact passage the
-examiner relied on, with a verification address into the stored record for
-every quote. Current law comes from the MPEP live, never recited from memory.
+Work with Claude, ChatGPT, or another supported AI like a prepared patent
+associate, with the claims, Office Actions, cited references, specification,
+and prosecution history organized and indexed for the conversation.
 
-The response is built in stages the attorney controls. Drafting stays locked
-until a registered practitioner approves the response plan on the PatentReply
-approval page; a confirmation inside the chat is never sign-off. After
-approval, PatentReply generates the 37 CFR 1.121 claim listing and the
-filing-ready response document on the server.
+**[Connect PatentReply](https://www.patentreply.ai/connect)** ·
+[Setup and Claude plugin](https://github.com/patentreply/patentreply-mcp) ·
+[Documentation](https://www.patentreply.ai/documentation)
 
-## Connect
+Start with **one new public matter per month, free, no credit card**.
+See [pricing and features](https://www.patentreply.ai/pricing).
 
-One hosted MCP server, OAuth sign-in, no API keys:
+## From application number to response strategy
 
-```
+1. **Connect once.** Add the hosted MCP server to your AI and approve the
+   PatentReply sign-in.
+2. **Open a matter.** Give it a U.S. application number. PatentReply retrieves
+   the public prosecution record and builds the working matter.
+3. **Work through the case.** Review a rejection, inspect the cited passages,
+   compare response options, and approve a plan before response drafting.
+
+After connecting, replace the bracketed text with your application number:
+
+> Open U.S. application [your application number] in PatentReply. Summarize
+> the current claims and prosecution posture, and flag record gaps before
+> we discuss strategy.
+
+## What you can work on
+
+| Task | Ask your AI |
+| --- | --- |
+| Matter orientation | "Where are we in this application, and which claims are pending?" |
+| Office Action analysis | "Explain each rejection and check the passages the examiner cited." |
+| Examiner interview preparation | "Help me prepare the agenda, talking points, and fallback positions." |
+| Response strategy and amendments | "Compare response options and locate support for the proposed amendment." |
+| Draft quality control | "Check my response draft against the current prosecution record." |
+
+Feature access and usage allowances depend on your plan.
+
+## Official public repository
+
+[**patentreply-mcp**](https://github.com/patentreply/patentreply-mcp) contains
+the connection instructions, MCP Registry metadata, and Claude plugin with
+patent prosecution workflow skills. It is the starting point for Claude,
+ChatGPT, Cursor, and other compatible MCP clients.
+
+```text
 https://mcp.patentreply.ai/mcp/v2
 ```
 
-- **Claude** (web, desktop, mobile): Settings → Connectors → Add custom connector
-- **Claude Code**: `claude mcp add --transport http patentreply https://mcp.patentreply.ai/mcp/v2`
-- **Cursor, ChatGPT, any MCP client**: see [patentreply/patentreply-mcp](https://github.com/patentreply/patentreply-mcp)
+Use the repository's [client-specific setup](https://github.com/patentreply/patentreply-mcp#connect-your-ai)
+to choose your connection method.
 
-Full guide: [patentreply.ai/connect](https://www.patentreply.ai/connect)
+## Evidence and attorney control
 
-## Repositories
+Record citations point back to stored source material. The workflow surfaces
+coverage gaps, unresolved citations, and disputed claim text for review.
+The practitioner approves the response-plan revision on PatentReply before
+the gated tools prepare the response Word document and claim listing.
 
-- [patentreply-mcp](https://github.com/patentreply/patentreply-mcp): the connector card, registry metadata, and the Claude plugin with the office-action methodology and `/oa`, `/respond`, `/interview`, `/status` commands.
+The hosted service is operated by Patent Agentic LLC. It receives the
+arguments your AI sends in tool calls and the documents you choose to
+supply; it does not independently read client memory, conversation history,
+or local files.
 
-The PatentReply service is hosted by Patent Agentic LLC and is not open
-source. Public USPTO records and current MPEP text are ingested server-side
-for the applications you name; PatentReply receives only the arguments of
-the tools your AI calls and never reads conversation history, memory, or
-files on your machine.
+[Website](https://www.patentreply.ai) ·
+[Documentation](https://www.patentreply.ai/documentation) ·
+[Pricing](https://www.patentreply.ai/pricing) ·
+[Privacy](https://www.patentreply.ai/privacy) ·
+[Security](https://www.patentreply.ai/security) ·
+[Terms](https://www.patentreply.ai/terms)
 
-## Links
+Support: [info@patentreply.ai](mailto:info@patentreply.ai)
 
-[Website](https://www.patentreply.ai) · [Documentation](https://www.patentreply.ai/documentation) · [Pricing](https://www.patentreply.ai/pricing) · [Privacy](https://www.patentreply.ai/privacy) · [Security](https://www.patentreply.ai/security) · [Terms](https://www.patentreply.ai/terms)
-
-Support: info@patentreply.ai
-
-*PatentReply is software, not a law firm. The registered practitioner remains responsible for every filing.*
+PatentReply is software, not a law firm. The practitioner remains responsible
+for legal judgments, docketing, and every filing.
